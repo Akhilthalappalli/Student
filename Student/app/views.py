@@ -4,13 +4,17 @@ from app.forms import StudentForm,AdminForm
 from django.db.models import Q
 # Create your views here.
 
-
 def user_dashboard(request):
     if not request.session.has_key('username'):
         return HttpResponseRedirect('/')
+    current_user = request.session["username"]
+    new = Student.objects.get(username=current_user)
+
+    print(new)
+
     obj = Student.objects.all()
 
-    context = {'obj':obj}
+    context = {'obj':obj,'new':new}
 
     return render(request,'user_dashboard.html',context)
 
