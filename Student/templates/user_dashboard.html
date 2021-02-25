@@ -23,6 +23,8 @@ tr:nth-child(even) {
 
 <h2>Student</h2>
 
+<a href="edit_profile/{{new.id}}">Edit profile</a>
+
 
 <table>
   <tr>
@@ -39,7 +41,7 @@ tr:nth-child(even) {
     <td>{{f.age}}</td>
     <td>{{f.mark}}</td>
     <td> <img src="{{f.picture.url}}" style="width:50px;height:60px;"></td>
-    <td><a href="edit_profile/{{f.id}}">Edit profile</a></td>
+
   </tr>
   {% endfor %}
 </table>
