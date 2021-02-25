@@ -1,0 +1,37 @@
+<h1>Admin Register</h1>
+
+
+
+<form  method="POST">
+      {% csrf_token %}
+
+ <table>
+
+      {%for f in form%}
+      <tr>
+
+        {%for error in f.errors%}
+          <td> <strong>({{f.label}})</strong>{{ error|escape }}</td>
+        {% endfor %}
+      </tr>
+
+      {% endfor %}
+
+
+      <label for="name">Name</label><br>
+      <input type="text" name="name"><br>
+      <label for="email">email</label><br>
+      <input type="email" name="email"><br>
+      <label for="password1">password</label><br>
+      <input type="password" name="password1"><br>
+      <label for="password2">Confirm Password</label><br>
+      <input type="password" name="password2"><br><br>
+
+    </table><br>
+
+    <input type="submit"  value="Save"><br>
+
+
+    <a href="admin_login">Admin_login</a>
+
+    </form>

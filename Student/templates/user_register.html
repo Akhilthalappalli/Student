@@ -1,0 +1,43 @@
+<h1>User Register</h1>
+
+
+
+<form  method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+
+ <table>
+
+      {%for f in form%}
+      <tr>
+
+        {%for error in f.errors%}
+          <td> <strong>({{f.label}})</strong>{{ error|escape }}</td>
+        {% endfor %}
+      </tr>
+
+      {% endfor %}
+
+
+      <label for="username">Username</label><br>
+      <input type="text" name="username"><br>
+      <label for="email">email</label><br>
+      <input type="email" name="email"><br>
+      <label for="dob">Dob</label><br>
+      <input type="date" name="dob"><br>
+      <label for="age">Age</label><br>
+      <input type="number" name="age"><br>
+      <label for="phone">Phone</label><br>
+      <input type="number" name="phone"><br>
+      <label for="password1">password</label><br>
+      <input type="password" name="password1"><br>
+      <label for="password2">Confirm Password</label><br>
+      <input type="password" name="password2"><br><br>
+      {{form.picture}}<br>
+
+    </table><br>
+
+    <input type="submit"  value="Save"><br>
+
+    <a href="/">Student_login</a>
+
+    </form>

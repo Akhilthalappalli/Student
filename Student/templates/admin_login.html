@@ -1,0 +1,21 @@
+<h1>Admin Register</h1>
+
+{% if login_status %}
+ <div class="alert alert-danger">
+     <strong>{{login_status}}</strong>
+</div>
+ {% endif %}
+
+<form action="{% url 'admin_login' %}" method="POST">
+    {% csrf_token %}
+     <label for="email">Email</label><br>
+      <input type="text" name="email"><br>
+      <label for="password1">Passord</label><br>
+      <input type="password" name="password1"><br>
+
+      <button type="submit">Login</button><br><br>
+
+</form>
+
+<a href="/">Student Login</a><br>
+<a href="admin_register">Admin Register</a>

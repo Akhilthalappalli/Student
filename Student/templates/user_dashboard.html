@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Student</h2>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>age</th>
+    <th>mark</th>
+    <th>Profile picture</th>
+  </tr>
+  {% for f in obj %}
+  <tr>
+    <td>{{f.username}}</td>
+    <td>{{f.phone}}</td>
+    <td>{{f.age}}</td>
+    <td>{{f.mark}}</td>
+    <td> <img src="{{f.picture.url}}" style="width:50px;height:60px;"></td>
+    <td><a href="edit_profile/{{f.id}}">Edit profile</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+<a href="user_logout">Logout</a>
+</body>
+</html>
+
+

@@ -1,0 +1,31 @@
+<h1>Hii Students</h1>
+<h3>Login</h3>
+
+{% if login_status %}
+ <div class="alert alert-danger">
+     <strong>{{login_status}}</strong>
+</div>
+ {% endif %}
+
+<form action="{% url 'user_login' %}" method="POST">
+    {% csrf_token %}
+     <label for="username">Username</label><br>
+      <input type="text" name="username"><br>
+      <label for="password1">Passord</label><br>
+      <input type="password" name="password1"><br>
+
+      <button type="submit">Login</button><br><br>
+
+</form>
+
+
+
+
+
+<a href="user_register">Student-Register</a><br>
+<a href="admin_login">Admin</a>
+
+
+
+
+
