@@ -70,6 +70,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Student.wsgi.application'
 
+# new change
+
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
